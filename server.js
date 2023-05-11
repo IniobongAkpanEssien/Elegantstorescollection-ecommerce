@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+
 const helmet = require("helmet");
 const rateLimiters = require("express-rate-limit");
 const bodyParser = require("body-parser");
@@ -11,7 +12,9 @@ app.use(bodyParser.urlencoded({ limit: "500000000mb", extended: true }));
 // middleware
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({ origin: 'https://elegantcollection.vercel.app' }));
+
 app.use(helmet());
 app.set("trust proxy", 1);
 // app.use(rateLimiter({ windowMs: 15 * 60 * 1000, max: 100 }));
