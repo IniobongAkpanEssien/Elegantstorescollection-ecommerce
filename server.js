@@ -13,7 +13,14 @@ app.use(bodyParser.urlencoded({ limit: "500000000mb", extended: true }));
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // Enable CORS for all routes
-app.use(cors({ origin: 'https://elegantcollection.vercel.app' }));
+app.use(cors());
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://elegantcollection.vercel.app"
+  );
+  next();
+});
 
 app.use(helmet());
 app.set("trust proxy", 1);

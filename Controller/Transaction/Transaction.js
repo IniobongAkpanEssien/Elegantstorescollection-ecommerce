@@ -51,7 +51,7 @@ const postTransaction = async (req, res) => {
       products.push(newProduct);
       totalAmount += total; // add the total cost to the totalAmount variable
     }
-
+// kk
     const productsWithTotal = products.map((p) => ({
       productname: p.productname,
       productprice: p.productprice,
