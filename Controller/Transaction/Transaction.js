@@ -115,7 +115,7 @@ const postTransaction = async (req, res) => {
     });
   } catch (error) {
     throw new Error(error);
-    console.log(error);
+    // console.log(error);
   }
 };
 

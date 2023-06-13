@@ -15,10 +15,7 @@ app.use(express.json());
 // Enable CORS for all routes
 app.use(cors());
 app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://elegantcollection.vercel.app"
-  );
+  res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
